@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ajax.mapper.ContinentMapper">
+
+  <!-- 대륙 -->
+  <select id="selectContinentList" resultType="map">
+    SELECT
+      continent_no AS continentNo,
+      continent_name AS continentName
+    FROM continent
+  </select>
+
+  <!-- 나라 -->
+  <select id="selectCountryListByContinent" parameterType="String" resultType="map">
+    SELECT
+      country_no AS countryNo,
+      country_name AS countryName
+    FROM country
+    WHERE continent_no = #{continentNo}
+  </select>
+
+  <!-- 도시 -->
+  <select id="selectCityListByCountry" parameterType="String" resultType="map">
+    SELECT
+      city_no AS cityNo,
+      city_name AS cityName
+    FROM city
+    WHERE country_no = #{countryNo}
+  </select>
+
+</mapper>

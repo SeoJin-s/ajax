@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+	<button type="button">^_^</button>
+	<div>1</div>
+	<p>2</p>
+	<div>3</div>
+	<p>4</p>
+	<div>5</div>
+	
+	<p id="p1">mouseenter</p>
+	
+<!-- jQuery 스크립트 -->
+	<script type="text/javascript">
+		// <p> 위에 마우스 올라가면 → 알림창 띄우기
+		$("p").one("mouseenter", function() {
+			alert("!!!!!!!?????????!@!##!132");  // 딱 한 번만 실행됨!
+		});
+		// <p> 위에 마우스 올라가면 → 알림창 띄우기
+		
+		/*
+		$("p").mouseenter(function() {
+			alert("짜잔");  // 마우스가 <p> 위에 올라올 때마다 실행됨
+		});
+		*/
+		
+		// <p>에 마우스 왼쪽 버튼 누르면 → 배경색 변경
+		$("p").mousedown(function() {
+			$(this).css("background-color", "lightblue");  // 마우스 버튼을 누르고 있는 동안
+		});
+	
+		// <p>에서 마우스 버튼을 떼면 → 텍스트 색 변경
+		$("p").mouseup(function() {
+			$(this).css("color", "red");  // 마우스 버튼에서 손을 뗄 때 실행
+		});
+	
+		// <p> 클릭 시 해당 <p>만 숨기기
+		$("p").click(function() {
+			$(this).hide();  // 클릭된 <p> 사라짐
+		});
+	
+		// 버튼 클릭 시 모든 <p> 숨기기
+		$("button").click(function() {
+			$('p').hide();  // 모든 <p> 태그 사라짐
+		});
+</script>
+
+</body>
+</body>
+</html>
