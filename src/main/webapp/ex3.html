@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="str">구디</div>
+	<div id="num">15</div>
+	<button type="button" id="btn">ajax post request</button>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+	$('#btn').on('click', function() {
+	$.ajax({
+		 url:'/ajaxRequest'
+		 , type:'post'
+		 , data: {str:$('#str').text()
+				, num:$('#num').text()
+				}
+		})
+	});
+	</script>
+	<!-- 
+		페이지를 요청하는 방법 <a> <form> - get, port - 동기요청
+		SCR방식에서 사용 가능
+		
+		
+		데이터를 요청하는 방법 : $.ajax({})  - get, post, delete, patch - 동기,비동기요청가능
+	 	CSR방식에서도 사용하지만 .. 
+	 	SSR방식에서도
+	 	페이지의 일부를 새로고침없이 변경하기 위해서 사용 또한 
+	 	외부 API에서 데이터가 필요할때 사용
+	 -->
+	
+</body>
+</html>
